@@ -1,0 +1,80 @@
+.section {
+  width: 100vw;
+  background: #fcfcfe;
+  color: var(--primary, #1a202c);
+  display: flex;
+  flex-direction: column;
+  padding: 52px 0 67px 0;
+  align-items: center;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2.7rem;
+}
+
+.accent {
+  color: var(--accent, #7f56d9);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.2rem;
+  width: 92vw;
+  max-width: 860px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 28px rgba(34,34,44,0.07);
+  padding: 1.8rem 1.5rem 1.7rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 210px;
+  border: 1.5px solid rgba(127,86,217,0.06);
+  transition: box-shadow 0.1s;
+}
+.card:hover {
+  box-shadow: 0 13px 34px rgba(127, 86, 217, .13);
+  border: 1.5px solid var(--accent, #7f56d9);
+}
+
+.avatar {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+blockquote {
+  font-size: 1.07rem;
+  font-style: italic;
+  color: #382e63;
+  margin-bottom: 13px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+figcaption {
+  text-align: center;
+  color: #888be2;
+  font-size: 0.99rem;
+}
+
+.reviewer {
+  font-weight: 600;
+  color: var(--primary, #1a202c);
+  display: block;
+}
+.company {
+  color: var(--accent, #7f56d9);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .section { padding: 34px 0 26px 0;}
+  .grid { gap: 0.9rem;}
+}

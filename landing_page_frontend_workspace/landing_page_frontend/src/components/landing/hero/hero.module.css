@@ -1,0 +1,160 @@
+.hero {
+  width: 100vw;
+  min-height: 65vh;
+  max-width: 100%;
+  background: linear-gradient(145deg, var(--primary, #1a202c) 60%, var(--accent, #7f56d9) 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding-top: 100px;
+  position: relative;
+}
+
+.bgEffect {
+  position: absolute;
+  width: 120vw;
+  height: 120vh;
+  left: -30vw;
+  top: -32vh;
+  background: radial-gradient(circle, rgba(127,86,217,0.14) 55%, transparent 85%);
+  z-index: 1;
+  filter: blur(18px);
+  animation: floatBg 13s infinite alternate;
+}
+@keyframes floatBg {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-60px);}
+}
+
+.inner {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  width: 90vw;
+  max-width: 670px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -1.5px;
+  font-weight: 650;
+}
+
+.accent {
+  color: var(--accent, #7f56d9);
+  font-weight: 750;
+}
+
+.subtitle {
+  color: #e0e0ea;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  max-width: 580px;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.ctaButton {
+  background-color: var(--accent, #7f56d9);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background 0.14s, color 0.12s, box-shadow 0.17s;
+  box-shadow: 0 2px 12px rgba(127,86,217,0.06);
+}
+.ctaButton:hover, .ctaButton:focus {
+  background: #6a2dec;
+  color: #fffce5;
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+  border: 2px solid var(--accent, #7f56d9);
+  color: var(--accent, #7f56d9);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: border 0.14s, color 0.12s, background 0.17s;
+}
+.ctaButtonSecondary:hover, .ctaButtonSecondary:focus {
+  background: var(--accent, #7f56d9);
+  color: #fff;
+}
+
+.bubbles {
+  z-index: 2;
+  position: absolute;
+  width: 100vw;
+  height: 65vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bubble1, .bubble2, .bubble3 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.10;
+  animation: riseBubble 13s infinite alternate;
+}
+.bubble1 {
+  width: 240px;
+  height: 240px;
+  background: var(--accent, #7f56d9);
+  left: 18vw;
+  top: 10vh;
+  animation-delay: 0.3s;
+}
+.bubble2 {
+  width: 180px;
+  height: 180px;
+  background: var(--secondary, #2d3748);
+  right: 12vw;
+  top: 25vh;
+  animation-delay: 1.9s;
+}
+.bubble3 {
+  width: 140px;
+  height: 140px;
+  background: var(--accent, #7f56d9);
+  left: 60vw;
+  top: 46vh;
+  opacity: 0.12;
+  animation-delay: 0s;
+}
+@keyframes riseBubble {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-60px);}
+}
+
+@media (max-width: 900px) {
+  .hero { min-height: 53vh; padding-top: 60px;}
+  .subtitle { font-size: 1.05rem;}
+  .bgEffect { display: none;}
+}
+
+@media (max-width: 680px) {
+  h1 { font-size: 2rem;}
+  .ctaGroup { flex-direction: column; }
+  .inner { padding: 0 0.5rem; }
+}
